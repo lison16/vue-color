@@ -87,6 +87,7 @@ export default {
           e.preventDefault()
         }
       }
+      e.stopPropagation()
     }
     // **** unused
     // handleDrag (e) {

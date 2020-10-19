@@ -1030,6 +1030,7 @@ exports.default = {
           e.preventDefault();
         }
       }
+      e.stopPropagation();
     }
   }
 };
@@ -2254,7 +2255,7 @@ module.exports = function listToStyles (parentId, list) {
 /* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var __WEBPACK_AMD_DEFINE_RESULT__;// TinyColor v1.4.1
+var __WEBPACK_AMD_DEFINE_RESULT__;// TinyColor v1.4.2
 // https://github.com/bgrins/TinyColor
 // Brian Grinstead, MIT License
 
@@ -3581,7 +3582,7 @@ var render = function() {
               },
               on: {
                 click: function($event) {
-                  _vm.handlerClick(c)
+                  return _vm.handlerClick(c)
                 }
               }
             },
@@ -3599,7 +3600,8 @@ var render = function() {
               })
             ]
           )
-        })
+        }),
+        0
       )
     ]
   )
@@ -3747,7 +3749,7 @@ var render = function() {
               },
               on: {
                 click: function($event) {
-                  _vm.handlerClick(c)
+                  return _vm.handlerClick(c)
                 }
               }
             },
@@ -3765,7 +3767,8 @@ var render = function() {
               })
             ]
           )
-        })
+        }),
+        0
       )
     ]
   )
@@ -4222,7 +4225,7 @@ var render = function() {
               },
               on: {
                 click: function($event) {
-                  _vm.handleSwClick(index, offset)
+                  return _vm.handleSwClick(index, offset)
                 }
               }
             },
@@ -4240,7 +4243,8 @@ var render = function() {
               })
             ]
           )
-        })
+        }),
+        0
       )
     ]
   )
@@ -4485,7 +4489,7 @@ var render = function() {
                   },
                   on: {
                     click: function($event) {
-                      _vm.handlerClick(c)
+                      return _vm.handlerClick(c)
                     }
                   }
                 },
@@ -4523,9 +4527,11 @@ var render = function() {
                   )
                 ]
               )
-            })
+            }),
+            0
           )
-        })
+        }),
+        0
       )
     ]
   )
@@ -5839,7 +5845,7 @@ var render = function() {
                     attrs: { "aria-label": "Color:" + c },
                     on: {
                       click: function($event) {
-                        _vm.handlePreset(c)
+                        return _vm.handlePreset(c)
                       }
                     }
                   })
@@ -5851,7 +5857,7 @@ var render = function() {
                       attrs: { "aria-label": "Color:" + c },
                       on: {
                         click: function($event) {
-                          _vm.handlePreset(c)
+                          return _vm.handlePreset(c)
                         }
                       }
                     },
