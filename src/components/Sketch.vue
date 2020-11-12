@@ -16,6 +16,7 @@
         <div :aria-label="`Current color is ${activeColor}`" class="vc-sketch-active-color" :style="{background: activeColor}"></div>
         <checkboard></checkboard>
       </div>
+      <slot name="controls"></slot>
     </div>
     <div class="vc-sketch-field" v-if="!disableFields">
       <!-- rgba -->

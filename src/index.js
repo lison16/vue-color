@@ -12,6 +12,7 @@ import EditableInput from './components/common/EditableInput.vue'
 import Hue from './components/common/Hue.vue'
 import Saturation from './components/common/Saturation.vue'
 import ColorMixin from './mixin/color.js'
+import { _colorChange } from './utils'
 
 const VueColor = {
   version: '2.7.1',
@@ -28,7 +29,8 @@ const VueColor = {
   EditableInput,
   Hue,
   Saturation,
-  ColorMixin
+  ColorMixin,
+  formatColor: _colorChange
 }
 
 module.exports = VueColor

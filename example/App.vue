@@ -20,8 +20,9 @@
     <div class="demo-container">
       <div class="demo-list">
         <div class="demo-item">
-          <sketch-picker v-model="colors"></sketch-picker>
+          <sketch-picker ref="sketch" :value="colors" @input="input" style="width: 140px"></sketch-picker>
           <h2>Sketch</h2>
+          <button @click="setColor">sss</button>
         </div>
         <div class="demo-item">
           <photoshop-picker v-model="colors" @ok="onOk" @cancel="onCancel"></photoshop-picker>
@@ -121,6 +122,13 @@ export default {
     },
     updateValue (value) {
       this.colors = value
+    },
+    setColor() {
+      this.$refs.sketch.setColors('#E94545')
+    },
+    input(v) {
+      console.log(v)
+      this.colors = v
     }
   },
   created () {
